@@ -45,6 +45,7 @@ CREATE TABLE pasajerosTitanic(
         
 	ALTER TABLE pasajerosTitanic
 	ADD CONSTRAINT Sobrevivio_es_cero_uno 			CHECK(Sobrevivió=0 OR Sobrevivió=1 ),
+    ADD CONSTRAINT Sobrevivio_no_nulo				CHECK(Sobrevivió IS NOT NULL),
 	ADD CONSTRAINT Clase_entre_uno_y_tres_incluidos CHECK(Clase>=1 AND Clase<=3),
     ADD CONSTRAINT Sexo_solo_Hombre_o_mujer 		CHECK(Sexo='male' OR Sexo='female'),
     ADD CONSTRAINT Familiares_no_negativos 			CHECK(familiares>=0 AND PadresHijos>=0),
